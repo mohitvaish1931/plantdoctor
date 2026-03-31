@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Plant Doctor Custom Styles */
+@layer base {
+  :root {
+    --color-brand-primary: #2F6F4E;
+    --color-brand-accent: #6BCB77;
+    --color-brand-background: #F4FFF8;
+    --color-brand-card: #FFFFFF;
+    --color-brand-text: #2D2D2D;
+    --color-brand-border: #E0E0E0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--color-brand-background);
+    color: var(--color-brand-text);
+    min-height: 100vh;
+  }
+}
+
+
+@layer components {
+  /* Botanical gradient backgrounds */
+  .bg-botanical {
+    @apply bg-gradient-to-br from-brand-primary via-brand-accent to-brand-primary;
+  }
+  
+  .bg-botanical-secondary {
+    @apply bg-gradient-to-br from-brand-primary/90 via-brand-accent/60 to-brand-primary/90;
+  }
+  
+  /* Plant Doctor button base */
+  .btn-plant-doctor {
+    @apply bg-gradient-to-r from-brand-primary via-brand-accent to-brand-accent hover:from-brand-accent hover:via-brand-accent hover:to-brand-primary text-white shadow-lg hover:shadow-xl hover:shadow-brand-accent/25 transition-all duration-300;
+  }
+  
+  /* Botanical accent text */
+  .text-botanical {
+    @apply text-brand-primary font-semibold;
+  }
+  
+  /* Glow effects */
+  .glow-emerald {
+    box-shadow: 0 0 20px rgba(107, 203, 119, 0.25);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 20px rgba(47, 111, 78, 0.2);
+  }
+
+  /* Toned base background to match the botanical image */
+  html, body {
+    background-color: var(--color-brand-background);
+    color: var(--color-brand-text);
+  }
+
+  /* Chat interface background image overlay */
+  .chat-interface {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chat-interface::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/chat-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    filter: saturate(0.88) blur(0px) contrast(0.95);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Ensure the app content layers above the background image */
+  .chat-interface > * {
+    position: relative;
+    z-index: 10;
+  }
+}

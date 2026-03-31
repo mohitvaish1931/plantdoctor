@@ -1,0 +1,83 @@
+Project Technology Overview
+===========================
+
+This project is an AI-powered plant health assistant built as a modern web application. It uses a React + TypeScript front end with Vite as the build tool and Tailwind CSS for styling. The app integrates with an AI service (OpenRouter/GPT-4 style backend) through a custom API service, and includes components for chat interaction, progress tracking, and badge rewards.
+
+1. Core Technologies
+--------------------
+- React: UI library for building the app interface.
+- TypeScript: typed JavaScript for safer development.
+- Vite: fast build tool and development server.
+- Tailwind CSS: utility-first CSS framework for styling.
+- ESLint: code quality and linting.
+- PostCSS + Autoprefixer: CSS processing.
+ 
+2. Project Structure and Where Each Technology Is Used
+-----------------------------------------------------
+- `src/main.tsx`
+  - Application entry point.
+  - Renders the root React app into the DOM.
+
+- `src/App.tsx`
+  - Main app component that controls navigation between screens.
+  - Uses React state and conditional rendering.
+
+- `src/components/`
+  - `Avatar.tsx`, `ChatInput.tsx`, `ChatInterface.tsx`, `LandingScreen.tsx`, `MessageBubble.tsx`, `ProgressScreen.tsx`, `TreatmentBox.tsx`, `TypingIndicator.tsx`
+  - These React components build the user interface and user interaction flows.
+  - Use React hooks and props for component composition.
+
+- `src/components/ui/`
+  - `Badge.tsx`, `Button.tsx`, `Card.tsx`
+  - Reusable UI components styled with Tailwind CSS.
+
+- `src/data/`
+  - `badges.ts`: definitions for reward badges.
+  - `quizQuestions.ts`: sample quiz / question content.
+
+- `src/services/`
+  - `apiService.ts`: handles API calls to the AI backend.
+  - `progressService.ts`: manages progress storage and score logic.
+
+- `src/types/index.ts`
+  - Shared TypeScript type definitions for data structures.
+
+- `src/index.css`
+  - Global CSS and Tailwind directives.
+  - Uses Tailwind utility classes and custom app-wide styles.
+
+3. Dependencies and Libraries
+-----------------------------
+- `react`, `react-dom`: core React libraries.
+- `@vitejs/plugin-react`: Vite plugin for React support.
+- `react-markdown`, `remark-gfm`: render AI text responses as formatted Markdown.
+- `framer-motion`: animation library for UI transitions.
+- `lucide-react`, `@heroicons/react`: icon components.
+- `canvas-confetti`, `react-confetti`: visual celebration effects.
+
+4. Build and Development
+------------------------
+- `npm run dev`: starts the Vite development server.
+- `npm run build`: builds the production app.
+- `npm run preview`: previews the production build.
+- `npm run lint`: runs ESLint for code quality checks.
+
+5. API and AI Integration
+-------------------------
+- The app connects to an AI service through `src/services/apiService.ts`.
+- It sends prompts and receives responses to power the plant diagnosis chat interface.
+- OpenRouter is the expected API provider in this project documentation.
+
+6. Styling and Visual Design
+----------------------------
+- Tailwind CSS provides responsive, utility-based styling.
+- The project uses a green botanical theme and modern card layouts.
+- Components are designed for desktop and mobile responsiveness.
+
+7. Additional Notes
+-------------------
+- The root project is configured as an ES module (`type: "module"` in `package.json`).
+- Vite server is configured in `vite.config.ts`.
+- This app is structured as a single-page application (SPA) built with React.
+
+Use this document to understand what technology the project uses and where each part of the app is implemented.
